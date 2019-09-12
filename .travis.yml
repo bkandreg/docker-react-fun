@@ -8,16 +8,19 @@ before_install:
 script:
   - docker run -e CI=true bhanukandregula/docker-react-fun npm run test -- --coverage
   
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "us-east-2"
-#   app: "docker-react-eb"
-#   env: "DockerReactEb-env"
-#   bucket_name: "elasticbeanstalk-us-east-2-791498313561"
-#   bucket_path: "docker-react-eb"
-#   on:
-#     branch: master
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react-eb"
+  env: "DockerReactEb-env"
+  bucket_name: "elasticbeanstalk-us-east-2-791498313561"
+  bucket_path: "docker-react-eb"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
 
 
-
+# AKIA3QSHZZ5MVM43T6ED
 # NgPXUeqxzbv0/eILYqClytEBX7OqcwNGKFf49R/G
