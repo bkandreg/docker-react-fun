@@ -4,10 +4,9 @@ services:
 
 before_install:
   - docker build -t bhanukandregula/docker-react-fun -f Dockerfile.dev .
-  - docker ps -a
 
 script:
-  - docker run bhanukandregula/docker-react-fun npm run test -- --coverage
+  - docker run -e CI=true bhanukandregula/docker-react-fun npm run test -- --coverage
   
 # deploy:
 #   provider: elasticbeanstalk
