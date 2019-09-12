@@ -4,6 +4,7 @@ services:
 
 before_install:
   - docker build -t bhanukandregula/docker-react-run -f Dockerfile.dev .
+  - docker ps -a
 
 script:
   - docker run bhanukandregula/docker-react-fun npm run test -- --coverage
