@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t bhanukandregula/docker-react-run -f Dockerfile.dev .
+  - docker build -t bhanukandregula/docker-react-fun -f Dockerfile.dev .
   - docker ps -a
 
 script:
